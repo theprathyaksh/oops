@@ -1,0 +1,59 @@
+import java.util.*;
+
+class Employeedetails{
+    int Emp_Id;
+    String Emp_name,Emp_age,Emp_gender,Emp_desig,Emp_sal,Emp_address;
+    
+    public String toString()
+    {
+        return "\n Name: "+Emp_name+"\nAge: "+Emp_age+"\nGender: "+Emp_gender+"\nDesignation: "+Emp_desig+"\nSalary: "+Emp_sal+"Address: "+Emp_address;
+    }
+}
+public class qudraticroots{
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter no of employees: ");
+        int n = sc.nextInt();
+        int i;
+
+       
+        Employeedetails e[] = new Employeedetails[n];
+        
+        for(i=0;i<n;i++)
+        {
+            e[i] = new Employeedetails();
+            
+            System.out.println("Enter Id: ");
+            e[i].Emp_Id = sc.nextInt();
+            
+            System.out.println("Enter name: ");
+            e[i].Emp_name = sc.next();
+            
+            System.out.println("Enter Age: ");
+            e[i].Emp_age = sc.next();
+            
+            System.out.println("Enter Gender: ");
+            e[i].Emp_gender = sc.next();
+            
+            System.out.println("Enter Designation: ");
+            e[i].Emp_desig = sc.next();
+            
+            System.out.println("Enter Salary: ");
+            e[i].Emp_sal = sc.next();
+            
+            System.out.println("Enter Address: ");
+            e[i].Emp_address = sc.next();
+        }
+        
+        System.out.println("Enter Id of emp: ");
+        int d = sc.nextInt();
+        for(i=0;i<n;i++){
+            if(d==e[i].Emp_Id){
+                System.out.println(e[i].toString());
+            }
+        }
+    
+           
+}
+}

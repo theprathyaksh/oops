@@ -1,0 +1,116 @@
+import java.util.*;
+class Employee
+{
+    private String FirstName;
+    private String LastName;
+    
+    public String getFirstName(){return FirstName;}
+    public String getLastName(){return LastName;}
+    
+    public void setFirstName(String FirstName)
+    {
+        this.FirstName = FirstName;
+    }
+    public void setLastName(String LastName)
+    {
+        this.LastName = LastName;
+    }
+    
+}
+class ContractEmployee extends Employee
+{
+    private String Department;
+    private  String Designation;
+    private int salary;
+    
+    public void setDepartment(String Department)
+    {
+        this.Department = Department;
+    }
+    public void setDesignation(String Designation)
+    {
+        this.Designation = Designation;
+    }
+    public String getDesg(){
+        return Designation;
+    }
+    public String getDept(){
+        return Department;
+    }
+    
+    public int getSalary()
+    {
+        return salary;
+    }
+    public void setSalary(int salary){this.salary = salary;}
+    
+    public String FullName()
+    {
+        return (getFirstName()+" "+getLastName());
+      
+    }
+    
+}
+class RegularEmployee extends Employee
+{
+      private String Department;
+    private  String Designation;
+    private int salary;
+    
+    public void setDepartment(String Department)
+    {
+        this.Department = Department;
+    }
+    public void setDesignation(String Designation)
+    {
+        this.Designation = Designation;
+    }
+    public String getDesg(){
+        return Designation;
+    }
+    public String getDept(){
+        return Department;
+    }
+    
+    public int getSalary()
+    {
+        return salary;
+    }
+    public void setSalary(int salary){this.salary = salary;}
+    
+    public String FullName()
+    {
+        return (getFirstName()+" "+getLastName());
+      
+    }
+    
+}
+public class W6P3 {
+    public static void main(String[] args)
+    {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter number of Employees: ");
+        int n = sc.nextInt();
+        ContractEmployee e[] = new ContractEmployee[n];
+        
+        for(int i=0;i<n;i++)
+        {
+            e[i] = new ContractEmployee();
+            System.out.println("Enter FirstName:");
+            e[i].setFirstName(sc.next());
+            System.out.println("Enter LastName:");
+            e[i].setLastName(sc.next());
+            System.out.println("Enter Salary:");
+            e[i].setSalary(sc.nextInt());
+        }
+        System.out.println("Details: ");
+        
+        for(int i=0;i<n;i++){
+            System.out.println("Name : "+e[i].FullName());
+            System.out.println("Salary "+e[i].getSalary());
+        }
+        
+        
+    }
+    
+}

@@ -1,0 +1,40 @@
+import java.util.*;
+
+class rectangle
+{
+    int length;
+    int breadth;
+    int x = 10;
+    
+    rectangle(int l, int b)
+    {
+        this.length = l;
+        this.breadth = b;
+    }
+            
+}
+class cuboid extends rectangle
+{
+    int height;
+    int x = 20;
+    
+    cuboid(int l, int b, int h)
+    {
+        super(l,b);
+        this.height = h;
+    }
+    void display()
+    {
+        System.out.println(super.x);
+        System.out.println(this.x);
+    }
+}
+public class qudraticroots{
+    public static void main(String[] args) 
+    {
+        cuboid c = new cuboid(1,2,3);
+        c.display();
+   
+    }  
+   
+}

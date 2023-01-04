@@ -1,0 +1,99 @@
+import java.util.*;
+
+class bank
+{
+    
+    String acc_name;
+    String acc_no;
+    double balance;
+    String address;
+    
+    public double getBalance()
+    {return balance;}
+    public void setBalance(double b)
+    {
+        if(b>0)
+            balance = b;
+        else
+            balance = 0;
+    }
+    
+    bank(String acc_name,String acc_no,double balance,String address)
+    {
+        this.acc_name = acc_name;
+        this.acc_no = acc_no;
+        this.balance = balance;
+        this.address = address;
+    }
+    
+    public void debit()
+    {
+        System.out.println("Enter amount to Withdraw: ");
+        Scanner sc = new Scanner(System.in);
+        double tempmoney = sc.nextInt();
+        if(tempmoney>balance)
+        {
+            System.out.println("Debit amount exceeded account balance");
+        }
+        else
+        {
+            balance = balance-tempmoney;
+            System.out.println("Your account is debited by "+tempmoney);
+        }
+        
+    }
+    
+    public void credit()
+    {
+        System.out.println("Enter amount to credit: ");
+        Scanner sc = new Scanner(System.in);
+        double tempmoney = sc.nextDouble();
+        
+        balance = balance +tempmoney;
+        System.out.println("Your Account is Credited with "+tempmoney);
+    }
+    public double display()
+    {
+        return getBalance();
+    }
+    
+    
+    
+}
+public class qudraticroots{
+    public static void main(String[] args) 
+    {
+        Scanner sc=new Scanner(System.in);
+        bank a=new bank("akshay","unionbank",0,"jagtial");
+        while(true)
+        {
+            System.out.println("1.Credit\n2.Debit\n3.Display\n4.Exit");
+            System.out.println("Enter the option:");
+            int ch=sc.nextInt();
+            switch(ch)
+            {
+                case 1:
+                    a.credit();
+                    break;
+                case 2:
+                    a.debit();
+                    break;
+                case 3:
+                    double s=a.display();
+                    System.out.println("YOUR BALANCE: "+s);
+                    break;
+                case 4:
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Enter valid option: ");
+                    
+            }
+                
+        }
+        
+        
+        
+    }  
+   
+}

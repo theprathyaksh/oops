@@ -1,0 +1,54 @@
+import java.util.*;
+
+class book{
+    String book_name,book_author;
+    int book_count;
+    
+    book(String book_name, String book_author,int book_count)
+    {
+        this.book_name = book_name;
+        this.book_author = book_author;
+        this.book_count = book_count;
+    }
+    int decbookcount()
+    {
+        book_count--;
+        return book_count;
+    }
+    
+  
+}
+class customer{
+    String cust_id,cust_name,cust_address;
+    
+    customer(String cust_id, String cust_name, String cust_address)
+    {
+        this.cust_id = cust_id;
+        this.cust_name = cust_name;
+        this.cust_address = cust_address;
+    }
+    void buybook(book b)
+    {
+        System.out.println("Remaining book count of"+b.book_name+"is"+b.decbookcount());
+    }
+}
+public class qudraticroots{
+    public static void main(String[] args)
+    {
+        
+        book b[] = new book[3];
+        b[0] = new book("wings of fire","abdul Kalam",8);
+        b[1] = new book("Artificial Intelligence","Richard james",3);
+        b[2] = new book("Power of AI","bose jhonson",5);
+        
+        customer c[] = new customer[2];
+        c[0] = new customer("123","prathyaksh","hyde");
+        c[1] = new customer("098","raina","chennai");
+        
+        c[0].buybook(b[0]);
+        c[1].buybook(b[2]);
+        
+        
+        
+    }
+}
